@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Container {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.Line {
+  position: absolute;
+  width: 80%;
+  height: 5%;
+  background: #d4af37;
+  border-radius: 5px;
+}
+
+.Line1 {
+  transform: translateY(-500%);
+  transition: transform 0.2s ease-out;
+}
+
+.Line2 {
+  transition: opacity 0.2s ease-out;
+}
+
+.Line3 {
+  transform: translateY(500%);
+  transition: transform 0.2s ease-out;
+}
+.Line1.Open {
+  transform: rotate(45deg);
+}
+
+.Line2.Open {
+  opacity: 0;
+}
+
+.Line3.Open {
+  transform: rotate(-45deg);
+}
+
+@media (min-width: 861px) {
+  .Container {
+    display: none;
+  }
+}

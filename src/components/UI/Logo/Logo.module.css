@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&display=swap");
+
+.Logo {
+  position: inline-block;
+  width: 140px;
+  display: flex;
+  height: 140px;
+  justify-content: center;
+}
+.Small {
+  height: 40px;
+  align-items: center;
+}
+
+.LogoImg {
+  position: absolute;
+  fill: #d4af37;
+  width: 100px;
+  height: auto;
+  margin: 20px 0;
+}
+
+.LogoImgSmall {
+  fill: #d4af37;
+  height: 30px;
+}
+
+@media (min-width: 640px) {
+  .Logo {
+    width: 20%;
+  }
+}

@@ -1,0 +1,173 @@
+.Con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.Square {
+  position: relative;
+  width: 30vw;
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  border: 7px solid transparent;
+}
+
+.Square * {
+  opacity: 1;
+}
+.Square:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+  /* initial ratio of 1:1*/
+}
+
+.verline__1 {
+  position: absolute;
+  background-color: #d4af37;
+  width: 1.357%;
+  right: -1.357%;
+  left: auto;
+  top: 40.47%;
+  bottom: auto;
+  transition: height 0.3s ease-out;
+  transition-delay: 0.9s;
+  height: 0;
+}
+
+.verline__2 {
+  position: absolute;
+  background-color: #d4af37;
+  width: 1.357%;
+  left: -1.357%;
+  bottom: -1.357%;
+  transition: height 0.3s ease-out;
+  transition-delay: 0.3s;
+  height: 0;
+}
+
+.horline__2 {
+  position: absolute;
+  background-color: #d4af37;
+  height: 1.357%;
+  left: -1.357%;
+  top: -2%;
+  transition: width 0.3s ease-out;
+  width: 0;
+}
+.horline__1 {
+  position: absolute;
+  background-color: #d4af37;
+  height: 1.357%;
+  left: auto;
+  right: -1.357%;
+  top: auto;
+  bottom: -1.357%;
+  transition: width 0.3s ease-out;
+  transition-delay: 0.6s;
+  width: 0;
+}
+
+.Square.active .verline__1 {
+  transition-delay: 0s;
+  height: 59.8%;
+}
+
+.Square.active .horline__1 {
+  transition-delay: 0.3s;
+  width: 102.8%;
+}
+.Square.active .verline__2 {
+  transition-delay: 0.6s;
+  height: 102.8%;
+}
+.Square.active .horline__2 {
+  transition-delay: 0.9s;
+  width: 59.8%;
+}
+
+.Outer {
+  top: 17.64%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 68.47%;
+  height: 34.48%;
+  background: transparent;
+  border-radius: 90px;
+}
+.NLet,
+.OLet,
+.CLet {
+  fill: #d4af37;
+  display: inline-block;
+  opacity: 0;
+  height: 51.43%;
+  width: 23.92%;
+  transition: opacity 0.2s ease-out;
+}
+.CLet {
+  margin-left: -2%;
+}
+.Square.active .NLet {
+  opacity: 1;
+}
+.Square.active .OLet {
+  transition-delay: 0.4s;
+  opacity: 1;
+}
+.Square.active .CLet {
+  transition-delay: 0.8s;
+  opacity: 1;
+}
+
+.Logo {
+  display: none;
+  fill: #d4af37;
+  position: absolute;
+  width: 98.47%;
+  height: auto;
+  left: -22.08%;
+  transition: left 0.4s ease-out;
+}
+.Moon {
+  /* 41.5 */
+  width: 41.5%;
+  height: auto;
+  fill: #d4af37;
+  position: absolute;
+  left: 4%;
+  transition: left 0.4s ease-out;
+}
+
+.Square.active .Moon {
+  transition-delay: 1.2s;
+  left: 50.5%;
+}
+
+.Square.Disapear * {
+  transition-delay: 0s !important;
+  transition: none;
+  transition: opacity 0.5s ease-out;
+  opacity: 0;
+}
+
+.LogoLetters {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  width: 102.8%;
+  height: 46.5%;
+}
+.OuterLogo {
+  fill: #d4af37;
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  left: -5%;
+}

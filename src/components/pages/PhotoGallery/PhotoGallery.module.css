@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.Img {
+  width: 10%;
+  height: auto;
+}
+.Photo {
+  position: static;
+  float: left;
+}
+
+.PhotoGallery {
+  position: relative;
+  background: linear-gradient(to bottom right, #232526, #414345);
+  display: flex;
+  padding-top: 5vh;
+  padding-bottom: 6vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.PhotoRow {
+  width: 96vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.firstTypeImg {
+  width: 30vh;
+  height: 30vh;
+  margin-top: 2vh;
+  padding: 0;
+  display: block;
+  object-fit: cover;
+  box-shadow: 2px 4px 3px #242424;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.Photo {
+  position: relative;
+  padding: 0;
+  transition: transform 0.2s ease-out;
+}
+
+.Photo::after {
+  position: absolute;
+  content: "";
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: calc(100% - 2vh);
+  top: 2vh;
+  border-radius: 10px;
+  left: 0;
+}
+
+.Photo:hover::after {
+  opacity: 0;
+}
+
+.Photo:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 788px) {
+  .firstTypeImg {
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .PhotoRow {
+    width: 96vw;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .Photo:hover {
+    transform: scale(1.1);
+    z-index: 500;
+  }
+  .Photo:hover .firstTypeImg {
+    box-shadow: 0 0 0;
+  }
+}
+@media (max-width: 500px) {
+  .Photo:hover {
+    position: absolute;
+    transform: scale(2);
+    z-index: 500;
+  }
+}

@@ -1,0 +1,54 @@
+.Sidedrawer {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #fff;
+  top: 140px;
+  left: 0;
+  transition: top 0.4s ease-out;
+}
+.Sidedrawer:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.Sidedrawer.SmallToolbar {
+  top: 60px;
+}
+
+.SidedrawerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  height: auto;
+  width: 40%;
+  min-width: 200px;
+  box-sizing: content-box;
+  background: linear-gradient(rgba(33, 33, 33, 1), rgba(20, 20, 20, 0.6));
+  border: 1px solid rgba(50, 50, 50, 1);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 3px 3px rgba(20, 20, 20, 1);
+  transform: scaleY(1);
+  transform-origin: top center;
+  transition: transform 0.2s ease-out;
+  overflow: hidden;
+}
+.Sidedrawer.Closed .SidedrawerContainer {
+  transform: scaleY(0);
+  transition: transform 0.2s ease-out;
+}
+
+.SidedrawerContainer:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+@media (min-width: 861px) {
+  .Sidedrawer {
+    display: none;
+  }
+}
